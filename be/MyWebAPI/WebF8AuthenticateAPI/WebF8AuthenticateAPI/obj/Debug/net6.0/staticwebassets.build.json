@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "KneQpQsRsvp7U9uF7f848iOFo+gFhOFYBHf26oeLLuE=",
+  "Source": "WebF8AuthenticateAPI",
+  "BasePath": "_content/WebF8AuthenticateAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
