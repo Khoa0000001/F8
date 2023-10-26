@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DEtFC17CWiyT89052zQU9+zIP3PD7n8VjvZ8mAapdKiz1efGs01h2/yomx9xlDxQuCInjd03da2l7YD1ZraZ/A==",
+  "dgSpecHash": "VzU0sXCpn4cAWxXAy5L/Wia8J+MsRiYQQBdzfkqpOYMrEoqvV72mk7YJ0fcknhUH9HeLDe7lTyi61E6rsRLVgQ==",
   "success": true,
-  "projectFilePath": "D:\\MyWebAPI\\WebF8AuthenticateAPI\\WebF8AuthenticateAPI\\WebF8AuthenticateAPI.csproj",
+  "projectFilePath": "D:\\F8\\be\\MyWebAPI\\WebF8AuthenticateAPI\\WebF8AuthenticateAPI\\WebF8AuthenticateAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dao Khoa\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.22\\microsoft.aspnetcore.authentication.jwtbearer.6.0.22.nupkg.sha512",
     "C:\\Users\\Dao Khoa\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

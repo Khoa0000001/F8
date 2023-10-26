@@ -1,0 +1,285 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\F8\\be\\MyWebAPI\\WebF8-USER-API\\WebF8-USER-API\\WebF8-USER-API.csproj": {}
+  },
+  "projects": {
+    "D:\\F8\\be\\MyWebAPI\\WebF8-USER-API\\BLL\\BLL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\F8\\be\\MyWebAPI\\WebF8-USER-API\\BLL\\BLL.csproj",
+        "projectName": "BLL",
+        "projectPath": "D:\\F8\\be\\MyWebAPI\\WebF8-USER-API\\BLL\\BLL.csproj",
+        "packagesPath": "C:\\Users\\Dao Khoa\\.nuget\\packages\\",
+        "outputPath": "D:\\F8\\be\\MyWebAPI\\WebF8-USER-API\\BLL\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Dao Khoa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\F8\\be\\MyWebAPI\\WebF8-USER-API\\DAL\\DAL.csproj": {
+                "projectPath": "D:\\F8\\be\\MyWebAPI\\WebF8-USER-API\\DAL\\DAL.csproj"
+              },
+              "D:\\F8\\be\\MyWebAPI\\WebF8-USER-API\\DataModel\\DataModel.csproj": {
+                "projectPath": "D:\\F8\\be\\MyWebAPI\\WebF8-USER-API\\DataModel\\DataModel.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\F8\\be\\MyWebAPI\\WebF8-USER-API\\DAL\\DAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\F8\\be\\MyWebAPI\\WebF8-USER-API\\DAL\\DAL.csproj",
+        "projectName": "DAL",
+        "projectPath": "D:\\F8\\be\\MyWebAPI\\WebF8-USER-API\\DAL\\DAL.csproj",
+        "packagesPath": "C:\\Users\\Dao Khoa\\.nuget\\packages\\",
+        "outputPath": "D:\\F8\\be\\MyWebAPI\\WebF8-USER-API\\DAL\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Dao Khoa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\F8\\be\\MyWebAPI\\WebF8-USER-API\\DataModel\\DataModel.csproj": {
+                "projectPath": "D:\\F8\\be\\MyWebAPI\\WebF8-USER-API\\DataModel\\DataModel.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\F8\\be\\MyWebAPI\\WebF8-USER-API\\DataModel\\DataModel.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\F8\\be\\MyWebAPI\\WebF8-USER-API\\DataModel\\DataModel.csproj",
+        "projectName": "DataModel",
+        "projectPath": "D:\\F8\\be\\MyWebAPI\\WebF8-USER-API\\DataModel\\DataModel.csproj",
+        "packagesPath": "C:\\Users\\Dao Khoa\\.nuget\\packages\\",
+        "outputPath": "D:\\F8\\be\\MyWebAPI\\WebF8-USER-API\\DataModel\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Dao Khoa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\F8\\be\\MyWebAPI\\WebF8-USER-API\\WebF8-USER-API\\WebF8-USER-API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\F8\\be\\MyWebAPI\\WebF8-USER-API\\WebF8-USER-API\\WebF8-USER-API.csproj",
+        "projectName": "WebF8-USER-API",
+        "projectPath": "D:\\F8\\be\\MyWebAPI\\WebF8-USER-API\\WebF8-USER-API\\WebF8-USER-API.csproj",
+        "packagesPath": "C:\\Users\\Dao Khoa\\.nuget\\packages\\",
+        "outputPath": "D:\\F8\\be\\MyWebAPI\\WebF8-USER-API\\WebF8-USER-API\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Dao Khoa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\F8\\be\\MyWebAPI\\WebF8-USER-API\\BLL\\BLL.csproj": {
+                "projectPath": "D:\\F8\\be\\MyWebAPI\\WebF8-USER-API\\BLL\\BLL.csproj"
+              },
+              "D:\\F8\\be\\MyWebAPI\\WebF8-USER-API\\DataModel\\DataModel.csproj": {
+                "projectPath": "D:\\F8\\be\\MyWebAPI\\WebF8-USER-API\\DataModel\\DataModel.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

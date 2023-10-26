@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "1vlMGegWDQjuuQyq8EPB86cr1EYsPYSXwgs5FmRk5gI=",
+  "Source": "WebF8-USER-API",
+  "BasePath": "_content/WebF8-USER-API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

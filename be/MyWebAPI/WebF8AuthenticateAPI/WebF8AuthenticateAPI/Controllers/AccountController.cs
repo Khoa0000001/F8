@@ -7,7 +7,6 @@ using Newtonsoft.Json.Linq;
 
 namespace API.Controllers
 {
-    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class AccountController : ControllerBase
@@ -31,6 +30,14 @@ namespace API.Controllers
         public IActionResult RenewToken(TokenModel model)
         {
             var result = _accBusiness.CheckToken(model);
+            return Ok(result);
+        }
+
+        [Route("Create-Account")]
+        [HttpPost]
+        public IActionResult CreateAccount([FromBody] AuthenticateModel model)
+        {
+            var result = _accBusiness.CreateAccount(model.PhoneNumber,model.Password);
             return Ok(result);
         }
 

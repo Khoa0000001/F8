@@ -46,7 +46,7 @@ namespace BLL
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                     new Claim("AccountId", user.AccountId.ToString()),
                 }),
-                Expires = DateTime.UtcNow.AddMinutes(20),
+                Expires = DateTime.UtcNow.AddMinutes(1),
                 SigningCredentials = new SigningCredentials(
                     new SymmetricSecurityKey(key),
                     SecurityAlgorithms.HmacSha256Signature
@@ -240,6 +240,36 @@ namespace BLL
             dateTimeInterval = dateTimeInterval.AddSeconds(utcExpireDate).ToUniversalTime();
 
             return dateTimeInterval;
+        }
+        public ApiResponse CreateAccount(string phonenumber, string password)
+        {
+            if(_resAcc.GetDatabyPhonenumber(phonenumber) == null)
+            {
+                _resAcc.CreateAccount(phonenumber, password);
+                return new ApiResponse
+                {
+                    Success = true,
+                    Message = "Tài khoản đã được tạo thành công.",
+                    Data = new AuthenticateModel
+                    {
+                        PhoneNumber = phonenumber,
+                        Password = password
+                    }
+                };
+            }
+            else
+            {
+                return new ApiResponse
+                {
+                    Success = false,
+                    Message = "Tài khoản đã tồn tại.",
+                    Data = new AuthenticateModel
+                    {
+                        PhoneNumber = phonenumber,
+                        Password = password
+                    }
+                };
+            }
         }
     }
 }

@@ -11,6 +11,8 @@ namespace DAL.Interfaces
     {
         AccountModel Login(string phonenumber, string password);
         List<AccountModel> GetAllAccount();
+        bool CreateAccount(string phonenumber, string password);
+        AccountModel GetDatabyPhonenumber(string phonenumber);
 
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cwHVrrG5bdA4GQmv/UKS0xllQ/ZQMI/+HJ3/DWiDVvLP3wsQefdsbcgCFiOz33p1rFdUlBtOt6jsDGgUpTY9cA==",
+  "dgSpecHash": "I9n3BnE+aR0eNCK1iaRbUD1j07nuaSNitAmRsqjQBGJPUOO7XXxU/Y42HUYWOepwSEJ1MBDwnnvRAlg8KSxbVQ==",
   "success": true,
-  "projectFilePath": "D:\\MyWebAPI\\EducationF8-Gateway\\EducationF8-Gateway\\EducationF8-Gateway.csproj",
+  "projectFilePath": "D:\\F8\\be\\MyWebAPI\\EducationF8-Gateway\\EducationF8-Gateway\\EducationF8-Gateway.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dao Khoa\\.nuget\\packages\\fluentvalidation\\10.3.6\\fluentvalidation.10.3.6.nupkg.sha512",
     "C:\\Users\\Dao Khoa\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

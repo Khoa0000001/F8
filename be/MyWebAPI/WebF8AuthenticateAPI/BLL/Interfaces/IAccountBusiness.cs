@@ -11,7 +11,7 @@ namespace BLL.Interfaces
     {
         TokenModel Login(string phonenumber, string password);
         ApiResponse CheckToken(TokenModel model);
-
+        ApiResponse CreateAccount(string phonenumber, string password);
 
     }
 }

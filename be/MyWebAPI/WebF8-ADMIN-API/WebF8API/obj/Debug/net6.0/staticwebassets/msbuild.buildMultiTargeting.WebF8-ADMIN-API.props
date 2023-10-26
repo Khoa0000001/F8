@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\WebF8-ADMIN-API.props" />
+</Project>

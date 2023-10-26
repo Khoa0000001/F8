@@ -1,0 +1,11 @@
+D:\F8\be\MyWebAPI\WebF8-USER-API\DataModel\bin\Debug\net6.0\DataModel.deps.json
+D:\F8\be\MyWebAPI\WebF8-USER-API\DataModel\bin\Debug\net6.0\DataModel.dll
+D:\F8\be\MyWebAPI\WebF8-USER-API\DataModel\bin\Debug\net6.0\DataModel.pdb
+D:\F8\be\MyWebAPI\WebF8-USER-API\DataModel\obj\Debug\net6.0\DataModel.GeneratedMSBuildEditorConfig.editorconfig
+D:\F8\be\MyWebAPI\WebF8-USER-API\DataModel\obj\Debug\net6.0\DataModel.AssemblyInfoInputs.cache
+D:\F8\be\MyWebAPI\WebF8-USER-API\DataModel\obj\Debug\net6.0\DataModel.AssemblyInfo.cs
+D:\F8\be\MyWebAPI\WebF8-USER-API\DataModel\obj\Debug\net6.0\DataModel.csproj.CoreCompileInputs.cache
+D:\F8\be\MyWebAPI\WebF8-USER-API\DataModel\obj\Debug\net6.0\DataModel.dll
+D:\F8\be\MyWebAPI\WebF8-USER-API\DataModel\obj\Debug\net6.0\refint\DataModel.dll
+D:\F8\be\MyWebAPI\WebF8-USER-API\DataModel\obj\Debug\net6.0\DataModel.pdb
+D:\F8\be\MyWebAPI\WebF8-USER-API\DataModel\obj\Debug\net6.0\ref\DataModel.dll

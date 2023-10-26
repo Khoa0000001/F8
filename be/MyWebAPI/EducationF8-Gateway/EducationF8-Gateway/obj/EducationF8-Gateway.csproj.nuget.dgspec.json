@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MyWebAPI\\EducationF8-Gateway\\EducationF8-Gateway\\EducationF8-Gateway.csproj": {}
+    "D:\\F8\\be\\MyWebAPI\\EducationF8-Gateway\\EducationF8-Gateway\\EducationF8-Gateway.csproj": {}
   },
   "projects": {
-    "D:\\MyWebAPI\\EducationF8-Gateway\\EducationF8-Gateway\\EducationF8-Gateway.csproj": {
+    "D:\\F8\\be\\MyWebAPI\\EducationF8-Gateway\\EducationF8-Gateway\\EducationF8-Gateway.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MyWebAPI\\EducationF8-Gateway\\EducationF8-Gateway\\EducationF8-Gateway.csproj",
+        "projectUniqueName": "D:\\F8\\be\\MyWebAPI\\EducationF8-Gateway\\EducationF8-Gateway\\EducationF8-Gateway.csproj",
         "projectName": "EducationF8-Gateway",
-        "projectPath": "D:\\MyWebAPI\\EducationF8-Gateway\\EducationF8-Gateway\\EducationF8-Gateway.csproj",
+        "projectPath": "D:\\F8\\be\\MyWebAPI\\EducationF8-Gateway\\EducationF8-Gateway\\EducationF8-Gateway.csproj",
         "packagesPath": "C:\\Users\\Dao Khoa\\.nuget\\packages\\",
-        "outputPath": "D:\\MyWebAPI\\EducationF8-Gateway\\EducationF8-Gateway\\obj\\",
+        "outputPath": "D:\\F8\\be\\MyWebAPI\\EducationF8-Gateway\\EducationF8-Gateway\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

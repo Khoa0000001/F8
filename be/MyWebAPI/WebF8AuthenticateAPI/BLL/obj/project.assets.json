@@ -1349,11 +1349,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\MyWebAPI\\WebF8AuthenticateAPI\\BLL\\BLL.csproj",
+      "projectUniqueName": "D:\\F8\\be\\MyWebAPI\\WebF8AuthenticateAPI\\BLL\\BLL.csproj",
       "projectName": "BLL",
-      "projectPath": "D:\\MyWebAPI\\WebF8AuthenticateAPI\\BLL\\BLL.csproj",
+      "projectPath": "D:\\F8\\be\\MyWebAPI\\WebF8AuthenticateAPI\\BLL\\BLL.csproj",
       "packagesPath": "C:\\Users\\Dao Khoa\\.nuget\\packages\\",
-      "outputPath": "D:\\MyWebAPI\\WebF8AuthenticateAPI\\BLL\\obj\\",
+      "outputPath": "D:\\F8\\be\\MyWebAPI\\WebF8AuthenticateAPI\\BLL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1374,11 +1374,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\MyWebAPI\\WebF8AuthenticateAPI\\DAL\\DAL.csproj": {
-              "projectPath": "D:\\MyWebAPI\\WebF8AuthenticateAPI\\DAL\\DAL.csproj"
+            "D:\\F8\\be\\MyWebAPI\\WebF8AuthenticateAPI\\DAL\\DAL.csproj": {
+              "projectPath": "D:\\F8\\be\\MyWebAPI\\WebF8AuthenticateAPI\\DAL\\DAL.csproj"
             },
-            "D:\\MyWebAPI\\WebF8AuthenticateAPI\\DataModel\\DataModel.csproj": {
-              "projectPath": "D:\\MyWebAPI\\WebF8AuthenticateAPI\\DataModel\\DataModel.csproj"
+            "D:\\F8\\be\\MyWebAPI\\WebF8AuthenticateAPI\\DataModel\\DataModel.csproj": {
+              "projectPath": "D:\\F8\\be\\MyWebAPI\\WebF8AuthenticateAPI\\DataModel\\DataModel.csproj"
             }
           }
         }

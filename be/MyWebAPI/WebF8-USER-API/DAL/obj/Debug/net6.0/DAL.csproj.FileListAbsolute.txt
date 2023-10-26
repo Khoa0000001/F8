@@ -1,0 +1,15 @@
+D:\F8\be\MyWebAPI\WebF8-USER-API\DAL\obj\Debug\net6.0\DAL.csproj.AssemblyReference.cache
+D:\F8\be\MyWebAPI\WebF8-USER-API\DAL\obj\Debug\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\F8\be\MyWebAPI\WebF8-USER-API\DAL\obj\Debug\net6.0\DAL.AssemblyInfoInputs.cache
+D:\F8\be\MyWebAPI\WebF8-USER-API\DAL\obj\Debug\net6.0\DAL.AssemblyInfo.cs
+D:\F8\be\MyWebAPI\WebF8-USER-API\DAL\obj\Debug\net6.0\DAL.csproj.CoreCompileInputs.cache
+D:\F8\be\MyWebAPI\WebF8-USER-API\DAL\bin\Debug\net6.0\DAL.deps.json
+D:\F8\be\MyWebAPI\WebF8-USER-API\DAL\bin\Debug\net6.0\DAL.dll
+D:\F8\be\MyWebAPI\WebF8-USER-API\DAL\bin\Debug\net6.0\DAL.pdb
+D:\F8\be\MyWebAPI\WebF8-USER-API\DAL\bin\Debug\net6.0\DataModel.dll
+D:\F8\be\MyWebAPI\WebF8-USER-API\DAL\bin\Debug\net6.0\DataModel.pdb
+D:\F8\be\MyWebAPI\WebF8-USER-API\DAL\obj\Debug\net6.0\DAL.csproj.CopyComplete
+D:\F8\be\MyWebAPI\WebF8-USER-API\DAL\obj\Debug\net6.0\DAL.dll
+D:\F8\be\MyWebAPI\WebF8-USER-API\DAL\obj\Debug\net6.0\refint\DAL.dll
+D:\F8\be\MyWebAPI\WebF8-USER-API\DAL\obj\Debug\net6.0\DAL.pdb
+D:\F8\be\MyWebAPI\WebF8-USER-API\DAL\obj\Debug\net6.0\ref\DAL.dll
