@@ -26,14 +26,13 @@ namespace BLL
             secretRefresh = configuration["AppSettings:SecretRefresh"];
         }
 
-        public TokenModel Login(string phonenumber, string password)
+        public UserModel Login(string phonenumber, string password)
         {
             var user = _resAcc.Login(phonenumber, password);
             if (user == null) return null;
-
             return GenerateToken(user);
         }
-        public TokenModel GenerateToken(AccountModel user)
+        public UserModel GenerateToken(UserModel user)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(secret);
@@ -41,12 +40,11 @@ namespace BLL
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(ClaimTypes.Name, user.PhoneNumber.ToString()),
+                     new Claim(ClaimTypes.Name,user.Name),
                     new Claim("Role", user.TypeId),
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                    new Claim("AccountId", user.AccountId.ToString()),
                 }),
-                Expires = DateTime.UtcNow.AddMinutes(1),
+                Expires = DateTime.UtcNow.AddDays(5),
                 SigningCredentials = new SigningCredentials(
                     new SymmetricSecurityKey(key),
                     SecurityAlgorithms.HmacSha256Signature
@@ -55,22 +53,32 @@ namespace BLL
 
             var _token = tokenHandler.CreateToken(tokenDescriptor);
             var token = tokenHandler.WriteToken(_token);
-            var result = new TokenModel
+            var result = new UserModel
             {
-                AccessToken = token,
-                RefreshToken = CreateRefreshToken()
+                UserId = user.UserId,
+                Name = user.Name,
+                Avatar = user.Avatar,
+                PhoneNumber = user.PhoneNumber,
+                Email = user.Email,
+                Vip = user.Vip,
+                TypeId = user.TypeId,
+                Token = new TokenModel
+                {
+                    AccessToken = token,
+                    RefreshToken = CreateRefreshToken()
+                }
             };
 
             var CreateDBRefreshToken = _resRftoken.CreateRefreshToken(
                new RefreshTokenModel
                {
-                   RefreshToken = result.RefreshToken,
+                   RefreshToken = result.Token.RefreshToken,
                    JwtId = _token.Id,
-                   UserId = user.AccountId,
+                   UserId = user.UserId,
                    IsUsed = false,
                    IsRevoked = false,
                    IssuedAt = DateTime.UtcNow,
-                   ExpiredAt = DateTime.UtcNow.AddMinutes(50),
+                   ExpiredAt = DateTime.UtcNow.AddDays(30),
                }
                );
 
@@ -214,8 +222,8 @@ namespace BLL
                 _resRftoken.UpdateRefreshToken(storedToken);
 
                 //Create new token
-                var user = _resAcc.GetAllAccount().SingleOrDefault(
-                    x => x.AccountId == storedToken.UserId);
+                var user = _resAcc.GetAllUser().SingleOrDefault(
+                    x => x.UserId == storedToken.UserId);
                 var token = GenerateToken(user);
 
                 return new ApiResponse

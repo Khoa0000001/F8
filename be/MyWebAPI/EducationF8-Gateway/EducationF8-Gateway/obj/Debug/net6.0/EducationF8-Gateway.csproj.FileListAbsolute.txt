@@ -142,3 +142,8 @@ D:\F8\be\MyWebAPI\EducationF8-Gateway\EducationF8-Gateway\obj\Debug\net6.0\refin
 D:\F8\be\MyWebAPI\EducationF8-Gateway\EducationF8-Gateway\obj\Debug\net6.0\EducationF8-Gateway.pdb
 D:\F8\be\MyWebAPI\EducationF8-Gateway\EducationF8-Gateway\obj\Debug\net6.0\EducationF8-Gateway.genruntimeconfig.cache
 D:\F8\be\MyWebAPI\EducationF8-Gateway\EducationF8-Gateway\obj\Debug\net6.0\ref\EducationF8-Gateway.dll
+D:\F8\be\MyWebAPI\EducationF8-Gateway\EducationF8-Gateway\obj\Debug\net6.0\staticwebassets\msbuild.EducationF8-Gateway.Microsoft.AspNetCore.StaticWebAssets.props
+D:\F8\be\MyWebAPI\EducationF8-Gateway\EducationF8-Gateway\obj\Debug\net6.0\staticwebassets\msbuild.build.EducationF8-Gateway.props
+D:\F8\be\MyWebAPI\EducationF8-Gateway\EducationF8-Gateway\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.EducationF8-Gateway.props
+D:\F8\be\MyWebAPI\EducationF8-Gateway\EducationF8-Gateway\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.EducationF8-Gateway.props
+D:\F8\be\MyWebAPI\EducationF8-Gateway\EducationF8-Gateway\obj\Debug\net6.0\staticwebassets.pack.json

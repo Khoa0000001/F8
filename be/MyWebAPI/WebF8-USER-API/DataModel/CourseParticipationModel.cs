@@ -12,5 +12,6 @@ namespace DataModel
         public int CourseId { get; set; }
         public int UserId { get; set; }
         public DateTime? RegistrationDate { get; set; }
+        public List<CourseModel> list_json_Courses { get; set; }
     }
 }

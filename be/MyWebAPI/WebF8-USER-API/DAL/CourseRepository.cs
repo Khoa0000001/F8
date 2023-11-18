@@ -6,11 +6,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 
 namespace DAL
 {
-    public class CourseRepository : ICourseRepository
+    public class CourseRepository: ICourseRepository
     {
         private IDatabaseHelper _db;
 
@@ -18,16 +17,17 @@ namespace DAL
         {
             _db = db;
         }
-        public List<CourseModel> GetAllByCategoryID(string id)
+
+        public CourseModel GetByID(string id)
         {
             string msgError = "";
             try
             {
-                var dt = _db.ExecuteSProcedureReturnDataTable(out msgError, "sp_course_get_all_by_categoryid",
-                    "@id", id);
+                var dt = _db.ExecuteSProcedureReturnDataTable(out msgError, "sp_course_get_by_id",
+                     "@id", id);
                 if (!string.IsNullOrEmpty(msgError))
                     throw new Exception(msgError);
-                return dt.ConvertTo<CourseModel>().ToList();
+                return dt.ConvertTo<CourseModel>().FirstOrDefault();
             }
             catch (Exception ex)
             {

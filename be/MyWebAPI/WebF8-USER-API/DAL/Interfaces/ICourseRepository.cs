@@ -9,6 +9,6 @@ namespace DAL.Interfaces
 {
     public interface ICourseRepository
     {
-        List<CourseModel> GetAllByCategoryID(string id);
+        CourseModel GetByID(string id);
     }
 }

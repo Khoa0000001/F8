@@ -4,7 +4,7 @@
   },
   "Routes": [
     {
-      "DownstreamPathTemplate": "/api/Admin/Category/{everything}",
+      "DownstreamPathTemplate": "/api/Admin/{everything}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -12,8 +12,8 @@
           "Port": 44308
         }
       ],
-      "UpstreamPathTemplate": "/Admin/Category/{everything}",
-      "UpstreamHttpMethod": [ "GET" ],
+      "UpstreamPathTemplate": "/Admin/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
       "RateLimitOptions": {
         "ClientWhitelist": [],
         "EnableRateLimiting": true,
@@ -28,6 +28,34 @@
       "RouteClaimsRequirement": {
         "Role": "Ad_1512kk"
       }
+    },
+    {
+      "DownstreamPathTemplate": "/api/User/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44395
+        }
+      ],
+      "UpstreamPathTemplate": "/User/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "1s",
+        "PeriodTimespan": 1,
+        "Limit": 5
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Us_1512kk"
+      }
     }
+
+
   ]
 }

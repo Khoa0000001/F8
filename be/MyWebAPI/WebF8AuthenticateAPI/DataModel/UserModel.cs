@@ -14,6 +14,7 @@ namespace DataModel
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
         public bool Vip { get; set; }
-        public List<CourseParticipationModel>? list_json_Participations { get; set; }
+        public string TypeId { get; set; }
+        public TokenModel Token { get; set; }
     }
 }

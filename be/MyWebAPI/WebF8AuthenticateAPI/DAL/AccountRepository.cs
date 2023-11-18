@@ -20,7 +20,7 @@ namespace DAL
             _db = db;
         }
 
-        public AccountModel Login(string phonenumber, string password)
+        public UserModel Login(string phonenumber, string password)
         {
             string msgError = "";
             try
@@ -32,23 +32,23 @@ namespace DAL
                     "@password", password);
                 if (!string.IsNullOrEmpty(msgError))
                     throw new Exception(msgError);
-                return data.ConvertTo<AccountModel>().FirstOrDefault();
+                return data.ConvertTo<UserModel>().FirstOrDefault();
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-        public List<AccountModel> GetAllAccount()
+        public List<UserModel> GetAllUser()
         {
             string msgError = "";
             try
             {
-                var result = _db.ExecuteSProcedureReturnDataTable(out msgError, "sp_account_get_all");
+                var result = _db.ExecuteSProcedureReturnDataTable(out msgError, "sp_user_get_all");
 
                 if (!string.IsNullOrEmpty(msgError))
                     throw new Exception(msgError);
-                return result.ConvertTo<AccountModel>().ToList();
+                return result.ConvertTo<UserModel>().ToList();
             }
             catch (Exception ex)
             {

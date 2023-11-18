@@ -43,7 +43,6 @@ builder.Services.AddTransient<IAccountBusiness, AccountBusiness>();
 IConfiguration configuration = builder.Configuration;
 var appSettingsSection = configuration.GetSection("AppSettings");
 builder.Services.Configure<AppSettings>(appSettingsSection);
-
 // configure jwt authentication
 var appSettings = appSettingsSection.Get<AppSettings>();
 var key = Encoding.ASCII.GetBytes(appSettings.Secret);
@@ -88,5 +87,8 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-
+app.UseCors(x => x
+    .AllowAnyOrigin()
+    .AllowAnyMethod()
+    .AllowAnyHeader());
 app.Run();

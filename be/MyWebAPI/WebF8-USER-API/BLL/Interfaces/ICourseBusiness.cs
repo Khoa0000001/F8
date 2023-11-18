@@ -9,6 +9,6 @@ namespace BLL.Interfaces
 {
     public interface ICourseBusiness
     {
-        List<CourseModel> GetAllByCategoryId(string id);
+        CourseModel GetByID(string id);
     }
 }

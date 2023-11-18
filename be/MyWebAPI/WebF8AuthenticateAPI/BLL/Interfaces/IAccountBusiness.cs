@@ -9,7 +9,7 @@ namespace BLL.Interfaces
 {
     public interface IAccountBusiness
     {
-        TokenModel Login(string phonenumber, string password);
+        UserModel Login(string phonenumber, string password);
         ApiResponse CheckToken(TokenModel model);
         ApiResponse CreateAccount(string phonenumber, string password);
 

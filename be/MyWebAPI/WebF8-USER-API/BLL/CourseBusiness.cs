@@ -9,18 +9,16 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class CourseBusiness : ICourseBusiness
+    public class CourseBusiness: ICourseBusiness
     {
         ICourseRepository _res;
-        public CourseBusiness (ICourseRepository res)
+        public CourseBusiness(ICourseRepository res)
         {
             _res = res;
         }
-        public List<CourseModel> GetAllByCategoryId(string id)
+        public CourseModel GetByID(string id)
         {
-            if(int.TryParse(id, out _))
-               return _res.GetAllByCategoryID(id);
-            return null;
+            return _res.GetByID(id);
         }
     }
 }

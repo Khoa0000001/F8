@@ -6,7 +6,7 @@ using DataAccessLayer;
 using DataModel;
 using System.Text;
 using Microsoft.Extensions.Options;
-using System.Security.Claims;
+using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,9 +34,20 @@ builder.Services.AddCors(options =>
 });
 // Add services to the container.
 builder.Services.AddTransient<IDatabaseHelper, DatabaseHelper>();
+builder.Services.AddTransient<ICategoryRepository, CategoryRepository>();
+builder.Services.AddTransient<ICategoryBusiness, CategoryBusiness>();
+builder.Services.AddTransient<IBlogRepository, BlogRepository>();
+builder.Services.AddTransient<IBlogBusiness, BlogBusiness>();
+builder.Services.AddTransient<IUserRepository, UserRepository>();
+builder.Services.AddTransient<IUserBusinesss, UserBusinesss>();
+builder.Services.AddTransient<ILessonRepository, LessonRepository>();
+builder.Services.AddTransient<ILessonBusiness, LessonBusiness>();
+builder.Services.AddTransient<ISearchRepository, SearchRepository>();
+builder.Services.AddTransient<ISearchBusiness, SearchBusiness>();
 builder.Services.AddTransient<ICourseRepository, CourseRepository>();
 builder.Services.AddTransient<ICourseBusiness, CourseBusiness>();
-
+builder.Services.AddTransient<ICourseParticipationRepository, CourseParticipationRepository>();
+builder.Services.AddTransient<ICourseParticipationBusiness, CourseParticipationBusiness>();
 
 
 // configure strongly typed settings objects
@@ -56,6 +67,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
 app.UseRouting();
 app.UseCors(x => x
     .AllowAnyOrigin()

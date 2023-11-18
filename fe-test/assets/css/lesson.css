@@ -1,0 +1,310 @@
+html ::-webkit-scrollbar {
+    border-radius: 0;
+    height: 8px;
+    width: 8px;
+}
+
+html ::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .15);
+    border-radius: 4px;
+}
+
+html ::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 0;
+}
+a{
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+button {
+    font-family: inherit;
+    line-height: 1.15;
+    border: none;
+    box-shadow: none;
+    display: block;
+    outline: none;
+}
+h3{
+    margin: 0;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #29303b;
+    color: #fff;
+    height: 50px;
+}
+.header-left{
+    display: flex;
+    align-items: center;
+}
+.header-back{
+    display: flex;
+    height: 50px;
+    width: 60px;
+    cursor: pointer;
+    color: #fff;
+}
+.header-back i {
+    margin: auto;
+    font-size: 16px;
+}
+.header-infoLogo{
+    display: flex;
+    align-items: center;
+}
+.header-infoLogo img {
+    height: 30px;
+    border-radius: 8px;
+}
+.header-infoLogo h4{
+    font-size: 14px;
+    font-weight: 700;
+    margin-left: 16px;
+}
+.header-right{
+    display: flex;
+}
+.header-right div {
+    margin-right: 24px;
+}
+.total-lesson{
+    font-size: 13px;
+}
+.total-lesson strong {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.note,
+.tutorial{
+    font-size: 14px;
+    opacity: .8;
+    cursor: pointer;
+}
+
+.note:hover,
+.tutorial:hover{
+    opacity: 1;
+}
+.note i,
+.tutorial i{
+    margin-right: 4px;
+}
+
+.body {
+    
+}
+.body-left{
+    bottom: 50px;
+    left: 0;
+    margin-top: 50px;
+    overflow-x: hidden;
+    position: fixed !important;
+    top: 0;
+    width: 77%;
+}
+.body-video{
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.body-video_content{
+    
+}
+.video_content{
+    display: flex;
+    justify-content: center;
+    min-height: 400px;
+}
+.video_content>div{
+    min-width: 956px;
+}
+.video_content-Top{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+.Heading_heading{
+    font-size: 28px;
+    margin: 48px 0 8px;
+    font-weight: 600;
+}
+.Heading_updated{
+    font-size: 13px;
+    margin-bottom: 36px;
+}
+.video_addNote{
+    background-color: #ebebeb;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 12px 16px;
+}
+.video_content-Bottom{
+    font-size: 16px;
+    line-height: 2;
+    color: #292929;
+}
+.video_content-Bottom p {
+    margin: 6px 0;
+}
+.video_content-Bottom a {
+    color: #f05123;
+    text-decoration: underline;
+}
+.body-left_footer{
+    color: #666;
+    font-size: 14px;
+    padding: 12px 0;
+    text-align: center;
+}
+.body-right{
+    background-color: #fff;
+    bottom: 50px;
+    margin-top: 50px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 23%;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    overflow-x: hidden;
+}
+.body-right_header{
+    padding: 12px 16px;
+    border-bottom: 1px solid #dedfe0;
+    position: sticky;
+    background-color: #fff;
+    top: 0;
+}
+.body-right_header h1{
+    font-size: 16px;
+    line-height: 1.4;
+    margin: 0;
+    font-weight: 600;
+}
+.list-lessons{
+    padding: 6px 0;
+}
+.lesson-item{
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 8px 14px 14px 14px;
+}
+.lesson-item:hover{
+    background: #f1f1f1;
+}
+.lesson-item_left{
+
+}
+.lesson-item_left h3{
+    color: #000;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin: 0;
+}
+.lesson-item_left p{
+    font-size: 11px;
+    margin: 4px 0 0 14px;
+}
+.lesson-item_right{
+    align-items: center;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+}
+.lesson-item_right i {
+    font-size: 18px;
+    color: #f05123;
+}
+
+
+
+.footer {
+    align-items: center;
+    background-color: #f0f0f0;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+}
+.footer-btn-back{
+    cursor: pointer;
+    height: 34px;
+    border-radius: 6px;
+    color: #404040;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 12px;
+    margin-left: 12px;
+}
+
+.footer-btn-back span {
+    color: #404040;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px;
+}
+.footer-btn-next{
+    cursor: pointer;
+    height: 34px;
+    border-radius: 6px;
+    color: #404040;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 12px;
+    margin-left: 12px;
+    border: 2px solid #f05123;
+    color: #f05123;
+}
+.footer-btn-next span {
+    color: #f05123;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px;
+}
+
+.footer-toggle-wrap{
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    width: 30%;
+    position: absolute;
+    right: 0;
+}
+.footer-toggle-wrap h3 {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.footer-toggle-wrap button {
+    align-items: center;
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    flex-shrink: 0;
+    font-size: 16px;
+    height: 38px;
+    justify-content: center;
+    margin: 0 8px;
+    width: 38px;
+}

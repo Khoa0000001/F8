@@ -9,28 +9,49 @@ namespace WebF8_USER_API.Controllers
     [ApiController]
     public class CourseController : ControllerBase
     {
-        private ICourseBusiness _CouerseBusiness;
-        public CourseController(ICourseBusiness uBusiness)
+        private ICategoryBusiness _CategoryBusiness;
+        private ICourseBusiness _CourseBusiness;
+        public CourseController(ICategoryBusiness uBusiness, ICourseBusiness CourseBusiness)
         {
-            _CouerseBusiness = uBusiness;
+            _CategoryBusiness = uBusiness;
+            _CourseBusiness = CourseBusiness;
         }
 
-        [Route("get-by-id/{id}")]
+        [Route("get-all-course-by-id/{id}")]
         [HttpGet]
-        public ApiResponse GetDatabyID(string id)
+        public ApiResponse GetAllCourseByID(string id)
         {
-            var result = _CouerseBusiness.GetAllByCategoryId(id);
+            var result = _CategoryBusiness.GetAllCourseByID(id);
             if (result != null)
                 return new ApiResponse
                 {
                     Success = true,
-                    Message = "Get All By CategoryID successfully.",
+                    Message = "Get All Course By CategoryID successfully.",
                     Data = result
                 };
             return new ApiResponse
             {
                 Success = false,
-                Message = "Get All By CategoryID failed."
+                Message = "Get All Course By CategoryID failed."
+            };
+        }
+
+        [Route("get-course-by-id/{id}")]
+        [HttpGet]
+        public ApiResponse GetCourseByID(string id)
+        {
+            var result = _CourseBusiness.GetByID(id);
+            if (result != null)
+                return new ApiResponse
+                {
+                    Success = true,
+                    Message = "Get Course By CourseID successfully.",
+                    Data = result
+                };
+            return new ApiResponse
+            {
+                Success = false,
+                Message = "Get Course By CourseID failed."
             };
         }
     }

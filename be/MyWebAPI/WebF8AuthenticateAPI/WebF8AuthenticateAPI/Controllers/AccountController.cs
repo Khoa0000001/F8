@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
+using System.Web.Http.Cors;
 
 namespace API.Controllers
 {
@@ -23,7 +24,16 @@ namespace API.Controllers
         {
             var user = _accBusiness.Login(model.PhoneNumber, model.Password);
             if (user == null) return BadRequest(new { message = "Tài khoản hoặc mật khẩu không đúng!" });
-            return Ok(new { AccessToken = user.AccessToken,RefreshToken = user.RefreshToken});
+            return Ok(new {
+                UserID = user.UserId ,
+                Name = user.Name ,
+                Avatar = user.Avatar, 
+                PhoneNumber = user.PhoneNumber,
+                Email=user.Email, 
+                Vip = user.Vip,
+                TypeID = user.TypeId,
+                token = user.Token
+            });
         }
 
         [HttpPost("RenewToken")]

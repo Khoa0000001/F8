@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html  ng-app="myApp" ng-controller="LessonController" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F8</title>
+    <link rel="stylesheet" href="./assets/css/lesson.css">
+    <link rel="stylesheet" href="./assets/fonts/font/fontawesome-free-6.3.0-web/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>
+    <script src="./assets/js/global.js"></script>
+    <script src="./app/controller/LesonController.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header-left">
+            <a href="./index.html" class="header-back">
+                <i class="fa-solid fa-chevron-left"></i>
+            </a>
+            <div class="header-infoLogo">
+                <a href="./index.html">
+                    <img src="./assets/img/logo/logo-f8.png" alt="">
+                </a>
+                <h4>{{dataCourse.name}}</h4>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="total-lesson">
+                <strong>{{listLesson.length}}</strong>
+                bài học
+            </div>
+            <div class="note">
+                <i class="fa-solid fa-file"></i>
+                <span>Ghi chú</span>
+            </div>
+            <div class="tutorial">
+                <i class="fa-solid fa-circle-question"></i>
+                <span>Hướng dẫn</span>
+            </div>
+        </div>
+    </header>
+    <div class="body">
+        <div class="body-left">
+            <div class="body-video">
+                <div class="body-video_content">
+                    <iframe width="934" height="526"
+                        ng-src="{{ iframeSrc }}"
+                        title="Tổng quan về khóa học HTML CSS tại F8 | Học lập trình web cơ bản | Học được gì trong khóa học?"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="video_content">
+                <div>
+                    <div class="video_content-Top">
+                        <header class="wrapper">
+                            <h1 class="Heading_heading">{{ nameLesson }}</h1>
+                            <p class="Heading_updated">{{dateTime}}</p>
+                        </header>
+                        <button class="video_addNote">
+                            <i class="fa-solid fa-plus"></i>
+                            <span>Thêm ghi chú</span>
+                        </button>
+                    </div>
+                    <div class="video_content-Bottom">
+                        <p>
+                            Tham gia nhóm
+                            <a rel="noreferrer" target="_blank" href="https://www.facebook.com/groups/f8official/">Học lập
+                                trình tại F8</a>
+                            trên Facebook để cùng nhau trao đổi trong quá trình học tập ❤️
+                        </p>
+                        <p>
+                            Các bạn subscribe kênh Youtube
+                            <a rel="noreferrer" target="_blank"
+                                href="/external-url?continue=https%3A%2F%2Furl.mycv.vn%2Ff8_youtube%3Fref%3Dlesson_desc">F8
+                                Official</a>
+                            để nhận thông báo khi có các bài học mới nhé ❤️
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <p class="body-left_footer">
+                Made with ❤️ <span>.</span> Powered by F8
+            </p>
+        </div>
+        <div class="body-right">
+            <div class="body-right_header">
+                <h1>Nội dung khóa học</h1>
+            </div>
+            <div class="list-lessons">
+                <a ng-repeat="x in listLesson" ng-click="clickLesson(x.videoId,x.name,x.createdAt,$index+1,$event)" s class="lesson-item">
+                    <div class="lesson-item_left">
+                        <h3>
+                            <strong>{{$index+1}}. </strong>
+                            {{x.name}}
+                        </h3>
+                        <p>
+                            <span>{{x.views}}</span>
+                            Lượt xem
+                        </p>
+                    </div>
+                    <div class="lesson-item_right">
+                        <i class="fa-solid fa-circle-play"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <button class="footer-btn-back">
+            <i class="fa-solid fa-chevron-left"></i>
+            <span>BÀI TRƯỚC</span>
+        </button>
+        <button class="footer-btn-next">
+            <span>BÀI TIẾP THEO</span>
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <div class="footer-toggle-wrap" ng-click="hideLeft()">
+            <h3>{{inexLesson + '. ' + nameLesson}}</h3>
+            <button >
+                <i ng-show="showIcon" class="fa-solid fa-arrow-right"></i>
+                <i ng-show="!showIcon" class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </div>
+</body>
+</html>

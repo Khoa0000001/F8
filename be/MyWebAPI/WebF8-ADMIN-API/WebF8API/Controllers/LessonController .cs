@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace WebF8API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Admin/[controller]")]
     [ApiController]
     public class LessonController : ControllerBase
     {

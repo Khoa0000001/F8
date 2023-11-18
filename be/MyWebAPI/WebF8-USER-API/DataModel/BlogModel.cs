@@ -17,5 +17,6 @@ namespace DataModel
         public DateTime? CreatedAt { get; set; }
         public int ReadingTime { get; set; }
         public int UserId { get; set; }
+        public List<UserModel> list_json_users { get; set; }
     }
 }

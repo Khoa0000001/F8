@@ -96,3 +96,13 @@ D:\F8\be\MyWebAPI\WebF8AuthenticateAPI\WebF8AuthenticateAPI\obj\Debug\net6.0\ref
 D:\F8\be\MyWebAPI\WebF8AuthenticateAPI\WebF8AuthenticateAPI\obj\Debug\net6.0\WebF8AuthenticateAPI.pdb
 D:\F8\be\MyWebAPI\WebF8AuthenticateAPI\WebF8AuthenticateAPI\obj\Debug\net6.0\WebF8AuthenticateAPI.genruntimeconfig.cache
 D:\F8\be\MyWebAPI\WebF8AuthenticateAPI\WebF8AuthenticateAPI\obj\Debug\net6.0\ref\WebF8AuthenticateAPI.dll
+D:\F8\be\MyWebAPI\WebF8AuthenticateAPI\WebF8AuthenticateAPI\obj\Debug\net6.0\staticwebassets\msbuild.WebF8AuthenticateAPI.Microsoft.AspNetCore.StaticWebAssets.props
+D:\F8\be\MyWebAPI\WebF8AuthenticateAPI\WebF8AuthenticateAPI\obj\Debug\net6.0\staticwebassets\msbuild.build.WebF8AuthenticateAPI.props
+D:\F8\be\MyWebAPI\WebF8AuthenticateAPI\WebF8AuthenticateAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.WebF8AuthenticateAPI.props
+D:\F8\be\MyWebAPI\WebF8AuthenticateAPI\WebF8AuthenticateAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.WebF8AuthenticateAPI.props
+D:\F8\be\MyWebAPI\WebF8AuthenticateAPI\WebF8AuthenticateAPI\obj\Debug\net6.0\staticwebassets.pack.json
+D:\F8\be\MyWebAPI\WebF8AuthenticateAPI\WebF8AuthenticateAPI\bin\Debug\net6.0\System.Web.Cors.dll
+D:\F8\be\MyWebAPI\WebF8AuthenticateAPI\WebF8AuthenticateAPI\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+D:\F8\be\MyWebAPI\WebF8AuthenticateAPI\WebF8AuthenticateAPI\bin\Debug\net6.0\System.Web.Http.dll
+D:\F8\be\MyWebAPI\WebF8AuthenticateAPI\WebF8AuthenticateAPI\bin\Debug\net6.0\System.Web.Http.Cors.dll
+D:\F8\be\MyWebAPI\WebF8AuthenticateAPI\WebF8AuthenticateAPI\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
