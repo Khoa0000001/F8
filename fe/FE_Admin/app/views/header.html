@@ -1,0 +1,53 @@
+<header class="header">
+    <div class="grid d-flex-center">
+        <!-- Header logo -->
+        <div class="NavBar--logo">
+            <a href="">
+                <img class="NavBar--logoicon" src="./assets/img/logo/logo-f8.png" alt="">
+            </a>
+            <h4 class="NavBar--logoHeading">Ứng dụng F8</h4>
+        </div>
+        <!-- Header Actions -->
+        <div class="header_actions">
+            <!-- User Menu -->
+            <div aria-expanded="false" ng-click="handelClickActions_Avatar()" class="header_actions-avatar icon">
+                <img class="avatar" src="{{avatarRoot}}" alt="" />
+                <h3>{{nameRoot}}</h3>
+            </div>
+            <div ng-show="isShowheader_userMenu" aria-hidden="true" id="userMenu" class="header_userMenu userMenu-wrapper">
+                <div class="userMenu_user">
+                    <div class="userMenu_user-avatar">
+                        <img class="avatar" src="{{avatarRoot}}" alt="" />
+                    </div>
+                    <div class="userMenu_info">
+                        <span class="userMenu_info-name">{{nameRoot}}</span>
+                    </div>
+                </div>
+                <hr />
+                <ul class="userMenu-list">
+                    <li class="userMenu_item">
+                        <a href="" class="userMenu_item-link"> Profile </a>
+                    </li>
+                    <hr />
+                    <li class="userMenu_item">
+                        <a href="" class="userMenu_item-link"> Add blog </a>
+                    </li>
+                    <li class="userMenu_item">
+                        <a href="" class="userMenu_item-link"> My blogs </a>
+                    </li>
+                    <hr />
+                    <li class="userMenu_item">
+                        <a href="" class="userMenu_item-link"> Bookmark </a>
+                    </li>
+                    <hr />
+                    <li class="userMenu_item">
+                        <a href="" class="userMenu_item-link"> Setting </a>
+                    </li>
+                    <li class="userMenu_item">
+                        <a href="../FE_User/login.html" class="userMenu_item-link"> Logout </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>

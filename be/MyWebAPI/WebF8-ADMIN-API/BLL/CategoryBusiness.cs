@@ -33,9 +33,17 @@ namespace BLL
                 return _res.Update(model);
             return false;
         }
-        public List<CategoryModel> Search(string name)
+        public bool Delete(string id)
         {
-            return _res.Search(name);
+            return _res.Delete(id);
+        }
+        public bool Ins_Upd_Del(List<CategoryModel> model, string status)
+        {
+            return _res.Ins_Upd_Del(model, status);
+        }
+        public List<CategoryModel> Search(SearchModel model, out long total)
+        {
+            return _res.Search(model, out total);
         }
     }
 }

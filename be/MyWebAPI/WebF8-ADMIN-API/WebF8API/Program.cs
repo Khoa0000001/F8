@@ -44,6 +44,8 @@ builder.Services.AddTransient<ICategoryRepository, CategoryRepository>();
 builder.Services.AddTransient<ICategoryBusiness, CategoryBusiness>();
 builder.Services.AddTransient<ILessonRepository, LessonRepository>();
 builder.Services.AddTransient<ILessonBusiness, LessonBusiness>();
+builder.Services.AddTransient<IThongKeRepository, ThongKeRepository>();
+builder.Services.AddTransient<IThongKeBusiness, ThongKeBusiness>();
 
 
 // configure strongly typed settings objects

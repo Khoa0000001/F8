@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="myAppAdmin" ng-controller="MainAdminController" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Codelearn</title>
+    <link rel="stylesheet" href="./assets/css/grid.css" />
+    <link rel="stylesheet" href="./assets/css/mainAdmin.css" />
+    <link rel="stylesheet" href="./assets/css/thong_ke.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+        rel=" stylesheet " />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>
+    <script type="module" src="./assets/js/config_Firebase.js"></script>
+    <script type="module" src="./assets/js/eventFireBase.js"></script>
+    <script src="./assets/js/global.js"></script>
+    <script src="./app.js"></script>
+    <script src="app/controller/MainAdminController.js"></script>
+    <script type="module" src="./app/controller/HomeAdminController.js"></script>
+    <script type="module" src="./app/controller/courseAdminController.js"></script>
+    <script type="module" src="./app/controller/participationAdminController.js"></script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js?fbclid=IwAR3F-3-KnLRJL8Z-RWCr7d5oNNeG5GUx1POwR9Ju6W_jrge6gLKxt71VCh8"></script>
+</head>
+
+<body>
+    <div class="app">
+        <!-- Header -->
+        <div ng-include="'./app/views/header.html'"></div>
+
+        <!-- Container -->
+        <div ng-include="'./app/views/container.html'"></div>
+
+        <!-- Footer -->
+        <div ng-include="'./app/views/footer.html'"></div>
+    </div>
+</body>
+</html>

@@ -73,16 +73,57 @@ namespace DAL
                 throw ex;
             }
         }
-
-        public List<CategoryModel> Search(string name)
+        public bool Delete(string id)
         {
             string msgError = "";
             try
             {
+                var result = _db.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_category_delete",
+                "@CategoryId", id);
+                if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
+                {
+                    throw new Exception(Convert.ToString(result) + msgError);
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public bool Ins_Upd_Del(List<CategoryModel> model, string status)
+        {
+            string msgError = "";
+            try
+            {
+                var result = _db.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_category_UID_all",
+                "@TrangThai", status,
+                "@list_json_categorys", model != null ? MessageConvert.SerializeObject(model) : null);
+                if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
+                {
+                    throw new Exception(Convert.ToString(result) + msgError);
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public List<CategoryModel> Search(SearchModel model, out long total)
+        {
+            string msgError = "";
+            total = 0;
+            try
+            {
                 var dt = _db.ExecuteSProcedureReturnDataTable(out msgError, "sp_category_search",
-                    "@Name", name);
+                    "@Name", model.Name,
+                    "@page_index", model.Page_Index,
+                    "@page_size", model.Page_Size);
                 if (!string.IsNullOrEmpty(msgError))
                     throw new Exception(msgError);
+                if (dt.Rows.Count > 0) total = (long)dt.Rows[0]["RecordCount"];
                 return dt.ConvertTo<CategoryModel>().ToList();
             }
             catch (Exception ex)

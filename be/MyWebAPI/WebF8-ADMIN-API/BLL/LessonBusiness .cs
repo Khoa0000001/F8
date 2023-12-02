@@ -39,9 +39,18 @@ namespace BLL
                 return _res.Update(model);
             return false;
         }
-        public List<LessonModel> Search(string name)
+        public bool Delete(string id)
         {
-            return _res.Search(name);
+            return _res.Delete(id);
+        }
+
+        public bool Ins_Upd_Del(List<LessonModel> model, string status)
+        {
+            return _res.Ins_Upd_Del(model, status);
+        }
+        public List<LessonModel> Search(SearchModel model, out long total, string id)
+        {
+            return _res.Search(model ,out total,id);
         }
     }
 }

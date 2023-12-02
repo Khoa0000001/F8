@@ -1,0 +1,32 @@
+<div class="container">
+    <!-- Sidebar -->
+    <div class="sideBar">
+        <div class="sideBar_wrapper fixed">
+            <ul class="sideBar_list">
+                <li class="sideBar_item">
+                    <a href="#homeAdmin" title="Tổng quan" id="tongQuan" class="sideBar_item-link">
+                        <i class="fa-solid fa-house"></i>
+                        <span class="text sideBar_item-text">Tổng quan</span>
+                    </a>
+                </li>
+
+                <li class="sideBar_item">
+                    <a href="#courseAdmin" id="course" class="sideBar_item-link">
+                        <i class="fa-solid fa-road"></i>
+                        <span class="text sideBar_item-text">Khoá học</span>
+                    </a>
+                </li>
+
+                <li class="sideBar_item">
+                    <a href="#participationAdmin" id="participation" class="sideBar_item-link">
+                        <i class="fa-solid fa-newspaper"></i>
+                        <span class="text sideBar_item-text">Đăng ký</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div ng-view style="width: 100%;"></div>
+</div>

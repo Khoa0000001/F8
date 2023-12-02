@@ -1,0 +1,84 @@
+<div class="main_Settings">
+    <div>
+        <header>
+            <h2>Thông tin cá nhân</h2>
+        </header>
+        <div class="Setting_body">
+            <div class="Setting_item" id="Setting-name">
+                <div class="Setting_item-content">
+                    <div class="Setting_item-header">
+                        <h3>Họ Tên</h3>
+                    </div>
+                    <input type="text" name="full_name"  value="{{NameUserRoot}}" placeholder="Thêm họ tên của bạn..." disabled>
+                    <div class="Setting_item-description">
+                        <p>Tên của bạn xuất hiện trên trang cá nhân và bên cạnh các bình luận của bạn.</p>
+                    </div>
+                </div>
+                <div class="Setting_item-change">
+                    <button class="Setting_item-btnChange">Chỉnh sửa</button>
+                    <div class="Setting_item-btn" style="display: none;">
+            
+                        <button class="Setting_item-btnHuy">Hủy</button>
+                    </div>
+                </div>
+            </div>
+            <div class="Setting_item" id="Setting-avatar">
+                <div class="Setting_item-content">
+                    <div class="Setting_item-header">
+                        <h3>Avatar</h3>
+                    </div>
+                    <div class="Setting_item-description_avt">
+                        <p>Nên là ảnh vuông, chấp nhận các tệp: JPG, PNG hoặc GIF.</p>
+                        <div class="Setting_Img-avatar">
+                            <img src="{{AvataruserRoot}}" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="Setting_item-change">
+                    <button class="Setting_item-btnChange" onclick="document.getElementById('getFile').click()">Chỉnh sửa</button>
+                    <div class="Setting_item-btn" style="display: none;">
+                        <button class="Setting_item-btnHuy">Hủy</button>
+                    </div>
+                    <input type='file' id="getFile" style="display:none">
+                </div>
+            </div>
+            <div class="Setting_item" id="Setting-email">
+                <div class="Setting_item-content">
+                    <div class="Setting_item-header">
+                        <h3>Email</h3>
+                    </div>
+                    <input type="text" name="full_name" value="{{EmailUser}}" placeholder="Thêm email của bạn..." disabled>
+                    <div class="Setting_item-description">
+                        <p>Email của bạn.</p>
+                    </div>
+                </div>
+                <div class="Setting_item-change">
+                    <button class="Setting_item-btnChange">Chỉnh sửa</button>
+                    <div class="Setting_item-btn" style="display: none;">
+            
+                        <button class="Setting_item-btnHuy">Hủy</button>
+                    </div>
+                </div>
+            </div>
+            <div class="Setting_item" id="Setting-sdt">
+                <div class="Setting_item-content">
+                    <div class="Setting_item-header">
+                        <h3>Số điện thoại</h3>
+                    </div>
+                    <input type="text" name="full_name" value="{{PhoneNumber}}" placeholder="Thêm số điện thoại của bạn..." disabled>
+                    <div class="Setting_item-description">
+                        <p>Số điện thoại của bạn.</p>
+                    </div>
+                </div>
+                <div class="Setting_item-change">
+                    <button class="Setting_item-btnChange">Chỉnh sửa</button>
+                    <div class="Setting_item-btn" style="display: none;">
+            
+                        <button class="Setting_item-btnHuy">Hủy</button>
+                    </div>
+                </div>
+            </div>
+            <button class="Setting_btn-Luu">Lưu</button>
+        </div>  
+    </div>
+</div>

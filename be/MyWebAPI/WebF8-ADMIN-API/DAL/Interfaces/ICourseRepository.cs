@@ -12,6 +12,7 @@ namespace DAL.Interfaces
         CourseModel GetDatabyID(string id);
         bool Create(CourseModel model);
         bool Update(CourseModel model);
-        List<CourseModel> Search(string name);
+        bool Delete(string id);
+        List<CourseModel> Search(SearchModel model, out long total);
     }
 }

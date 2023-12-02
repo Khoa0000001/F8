@@ -12,6 +12,8 @@ namespace DAL.Interfaces
         CategoryModel GetDatabyID(string id);
         bool Create(CategoryModel model);
         bool Update(CategoryModel model);
-        List<CategoryModel> Search(string name);
+        bool Delete(string id);
+        bool Ins_Upd_Del(List<CategoryModel> model, string status);
+        List<CategoryModel> Search(SearchModel model, out long total);
     }
 }

@@ -1,0 +1,142 @@
+<div  class="header">
+    <div class="NavBar">
+        <div class="NavBar--iconBarMB">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="NavBar--logo">
+            <a href="#/home"><img class="NavBar--logoicon" src="./assets/img/logo/logo-f8.png" alt=""></a>
+            <h4 class="NavBar--logoHeading">Học Lập Trình Để Đi Làm</h4>
+        </div>
+        <div>
+            <div class="NavBar--seach">
+                <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+                <input ng-model="searchTerm" ng-change="onChangeSearch()" ng-focus="handleFocus()" ng-blur="handleBlur()" class="NavBar--search_input" spellcheck="false" placeholder="Tìm kiếm khóa học, bài viết, video, ..."
+                    value="{{searchTerm}}">
+            </div>
+            <!-- Seach -->
+            <div ng-show="isShowSearch" class="Body_seach">
+                <div class="Body_seach-content">
+                    <div class="Sea-content_header">
+                        <i class="fa-schharp fa-solid fa-magnifying-glass"></i>
+                        <span>Kết quả cho '{{searchTerm}}'</span>
+                    </div>
+                    <div ng-show="listSearch[0].list_json ? true : false" class="Seach-content_items">
+                        <header>
+                            <h5>KHÓA HỌC</h5>
+                            <a href="" class="Seach_moreAll">Xem thêm</a>
+                        </header>
+                        <a ng-repeat="x in listSearch[0].list_json" href="lesson.html?id={{x.courseId}}" class="Seach-content_item">
+                            <div class="FallbackAvatar_avatarSeach">
+                                <img ng-src="{{x.image ? x.image : './assets/img/hinh-anh-bi-loi.jpeg'}}" alt="">
+                            </div>
+                            <span>{{x.name}}</span>
+                        </a>
+                    </div>
+                    <div ng-show="listSearch[2].list_json ? true : false" class="Seach-content_items">
+                        <header>
+                            <h5>BÀI VIẾT</h5>
+                            <a href="" class="Seach_moreAll">Xem thêm</a>
+                        </header>
+                        <a ng-repeat="x in listSearch[2].list_json" href="" class="Seach-content_item">
+                            <div class="FallbackAvatar_avatarSeach">
+                                <img ng-src="{{x.image ? x.image : './assets/img/hinh-anh-bi-loi.jpeg'}}" alt="">
+                            </div>
+                            <span>{{x.title}}</span>
+                        </a>
+                    </div>
+                    <div ng-show="listSearch[1].list_json ? true : false" class="Seach-content_items">
+                        <header>
+                            <h5>VIDEO</h5>
+                            <a href="" class="Seach_moreAll">Xem thêm</a>
+                        </header>
+                        <a ng-repeat="x in listSearch[1].list_json" href="https://www.youtube.com/watch?v={{x.videoId}}" target="_blank" class="Seach-content_item">
+                            <div class="FallbackAvatar_avatarSeach">
+                                <img ng-src="{{x.image ? x.image : './assets/img/hinh-anh-bi-loi.jpeg'}}" alt="">
+                            </div>
+                            <span>{{x.name}}</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="NavBar--actions">
+            <div class="NavBar--iconSearchMB">
+                <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div style="position: relative;">
+                <button ng-click="LoadParticipations()" class="NarBar--action_myLearn">Khóa học của tôi</button>
+                <div class="NarBar-list_courses">
+                    <div class="NarBar-list_courseOverall">
+                        <div class="MyCourses_Header">
+                            <h6>Khóa học của tôi</h6>
+                            <a href="" class="MyCourses_views-all-btn">Xem tất cả</a>
+                        </div>
+                        <div class="MyCourses_Body">
+                            <div ng-repeat="x in listParticipations.list_json_Participations" class="MyCourse-item">
+                                <a href="">
+                                    <img ng-src="{{x.list_json_Courses[0].image?x.list_json_Courses[0].image:''}}"
+                                        alt="">
+                                </a>
+                                <div class="MyCourse-item_info">
+                                    <h3 class="MyCourse-item_title">
+                                        <a href="">{{x.list_json_Courses[0].name}}</a>
+                                    </h3>
+                                    <p class="MyCourses_last-completed">
+                                        Ngày đăng ký : {{x.list_json_Courses[0].createdAt.slice(0,10)}}.
+                                    </p>
+                                    <div class="Time-alrealy-myCourse"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <i class="fa-solid fa-bell"></i>
+            <div class="NavBar--actions_Avarta">
+                <img class="NavBar--Avarta" src="{{AvataruserRoot}}" alt="">
+            </div>
+            <div class="My-everythings">
+                <div class="My-everythings_Overall">
+                    <div class="UserMenu-user">
+                        <div class="UserMenu-avatar">
+                            <img src="{{AvataruserRoot}}" alt="">
+                        </div>
+                        <div class="UserMenu-Name">
+                            <span>{{NameUserRoot}}</span>
+                        </div>
+                    </div>
+                    <hr>
+                    <ul class="UserMenu-list">
+                        <li>
+                            <a href="">Trang cá nhân</a>
+                        </li>
+                    </ul>
+                    <hr>
+                    <ul class="UserMenu-list">
+                        <li>
+                            <a href="">Viết blog</a>
+                        </li>
+                        <li>
+                            <a href="">Bài viết của tôi</a>
+                        </li>
+                    </ul>
+                    <hr>
+                    <ul class="UserMenu-list">
+                        <li>
+                            <a href="">Bài viết đã lưu</a>
+                        </li>
+                    </ul>
+                    <hr>
+                    <ul class="UserMenu-list">
+                        <li id="OnSetting">
+                            <a href="#/settings" onclick="window.scrollTo(0, 0);">Cài đặt</a>
+                        </li>
+                        <li>
+                            <a href="login.html">Đăng xuất</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

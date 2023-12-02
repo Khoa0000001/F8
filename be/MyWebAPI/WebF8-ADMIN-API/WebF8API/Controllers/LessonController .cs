@@ -1,4 +1,5 @@
-﻿using BLL.Interfaces;
+﻿using BLL;
+using BLL.Interfaces;
 using DataModel;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -71,12 +72,67 @@ namespace WebF8API.Controllers
                 Data = model
             };
         }
-        [Route("search-lesson")]
-        [HttpGet]
-        public List<LessonModel> Search(string name)
+        [Route("delete-lesson/{id}")]
+        [HttpDelete]
+        public ApiResponse DeleteItem(string id)
         {
-            var result = _LessonBusiness.Search(name);
-            return result;
+            var result = _LessonBusiness.Delete(id);
+            if (result != null)
+                return new ApiResponse
+                {
+                    Success = true,
+                    Message = "Delete successfully.",
+                    Data = result
+                };
+            return new ApiResponse
+            {
+                Success = false,
+                Message = "Delete ID failed.",
+                Data = false
+            };
+        }
+
+        [Route("Ins-Upd-Del_list_Lesssons/{status}")]
+        [HttpPost]
+        public ApiResponse Ins_Upd_Del_list([FromBody] List<LessonModel> model,string status)
+        {
+            if (_LessonBusiness.Ins_Upd_Del(model,status))
+                return new ApiResponse
+                {
+                    Success = true,
+                    Message = status + " Lesson successfully.",
+                    Data = model
+                };
+            return new ApiResponse
+            {
+                Success = false,
+                Message = status + " Lesson failed",
+                Data = model
+            };
+        }
+
+        [Route("search-lesson-by-courseid/{id}")]
+        [HttpPost]
+        public IActionResult Search([FromBody] SearchModel model,string id)
+        {
+            try
+            {
+                long total = 0;
+                var data = _LessonBusiness.Search(model, out total,id);
+
+                return Ok(
+                    new
+                    {
+                        TotalItems = total,
+                        Data = data,
+                        CourseID = id
+                    }
+                    );
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

@@ -1,0 +1,129 @@
+.main_Settings{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 1400px;
+    margin-top: 20px;
+}
+.main_Settings header h2{
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    color: #333;
+    font-size: 22px;
+    margin: 0 0 20px;
+    padding: 10px 0;
+    font-weight: 600;
+}
+.Setting_body{
+    width: 60vw;
+    margin-bottom: 160px;
+}
+
+.Setting_item{
+    display: flex;
+    padding: 16px 0;
+}
+
+.Setting_item-content input{
+    background-color: #fff;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, .05);
+    color: rgba(0, 0, 0, .84) !important;
+    font-size: 14px;
+    margin-bottom: 10px;
+    outline: none;
+    padding-bottom: 8px;
+    width: 100%;
+    padding: 1px 2px 8px;
+    margin-bottom: 10px;
+    font-family: inherit;   
+}
+.Setting_item-content{
+    flex: 1 1;
+}
+.Setting_item-header {
+
+}
+
+.Setting_item-header h3{
+    font-size: 16px;
+    font-weight: 600;
+}
+.Setting_item-description {
+    margin: 16px 0;
+}
+.Setting_item-description p {
+    font-size: 14px;
+    color: #757575;
+    line-height: 2px;
+}
+.Setting_item-change{
+    margin-top: 24px;
+}
+.Setting_item-change button{
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 30px;
+    color: rgba(0, 0, 0, .54);
+    cursor: pointer;
+    font-size: 14px;
+    height: 37px;
+    line-height: 37px;
+    padding: 0 16px;
+}
+.Setting_item-description_avt{
+    display: flex;
+}
+
+.Setting_item-description_avt p{
+    font-size: 14px;
+    color: #757575;
+    line-height: 2px;
+    margin-top: 20px;
+}
+
+.Setting_Img-avatar {
+    border-radius: 50%;
+    height: 90px;
+    margin-left: 140px;
+    overflow: hidden;
+    width: 90px;
+    font-size: 8.9px;
+}
+
+.Setting_Img-avatar img {
+    border-radius: 50%;
+    height: 90px;
+    object-fit: cover;
+    width: 90px;
+}
+
+.Setting_item-change input {
+
+}
+
+.Setting_btn-Luu{
+    position: absolute;
+    right: 300px;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 30px;
+    color: rgba(0, 0, 0, .54);
+    cursor: pointer;
+    font-size: 14px;
+    height: 37px;
+    line-height: 37px;
+    padding: 0 60px;
+    border-color: #f05123 !important;
+    color: #f05123 !important;
+    margin-top: 16  px;
+}
+
+.Setting_item-btnHuy:hover{
+    border-color: rgba(0, 0, 0, .54);
+    color: rgba(0, 0, 0, .68);
+}
+
+.Setting_item-change button:hover{
+    border-color: rgba(0, 0, 0, .54);
+    color: rgba(0, 0, 0, .68);
+}

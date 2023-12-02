@@ -10,8 +10,9 @@ namespace BLL.Interfaces
     public interface ICourseBusiness
     {
         CourseModel GetDatabyID(string id);
-        public bool Create(CourseModel model);
-        public bool Update(CourseModel model);
-        public List<CourseModel> Search(string name);
+         bool Create(CourseModel model);
+         bool Update(CourseModel model);
+         bool Delete(string id);
+         List<CourseModel> Search(SearchModel model, out long total);
     }
 }

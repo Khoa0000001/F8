@@ -81,16 +81,38 @@ namespace DAL
                 throw ex;
             }
         }
-
-        public List<CourseModel> Search(string name)
+        public bool Delete(string id)
         {
             string msgError = "";
             try
             {
+                var result = _db.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_course_delete",
+                "@CourseId", id);
+                if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
+                {
+                    throw new Exception(Convert.ToString(result) + msgError);
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+           
+        public List<CourseModel> Search(SearchModel model,out long total)
+        {
+            string msgError = "";
+            total = 0;
+            try
+            {
                 var dt = _db.ExecuteSProcedureReturnDataTable(out msgError, "sp_course_search",
-                    "@Name", name);
+                    "@Name", model.Name,
+                    "@page_index",model.Page_Index,
+                    "@page_size",model.Page_Size);
                 if (!string.IsNullOrEmpty(msgError))
                     throw new Exception(msgError);
+                if (dt.Rows.Count > 0) total = (long)dt.Rows[0]["RecordCount"];
                 return dt.ConvertTo<CourseModel>().ToList();
             }
             catch (Exception ex)

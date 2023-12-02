@@ -1,4 +1,5 @@
-﻿using BLL.Interfaces;
+﻿using BLL;
+using BLL.Interfaces;
 using DataModel;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -71,12 +72,67 @@ namespace WebF8API.Controllers
                 Data = model
             };
         }
-        [Route("search-catagory")]
-        [HttpGet]
-        public List<CategoryModel> Search(string name)
+        [Route("delete-category/{id}")]
+        [HttpDelete]
+        public ApiResponse DeleteItem(string id)
         {
-           var result = _CategoryBusiness.Search(name);
-            return result;
+            var result = _CategoryBusiness.Delete(id);
+            if (result != null)
+                return new ApiResponse
+                {
+                    Success = true,
+                    Message = "Delete successfully.",
+                    Data = result
+                };
+            return new ApiResponse
+            {
+                Success = false,
+                Message = "Delete ID failed.",
+                Data = false
+            };
+        }
+
+        [Route("Ins-Upd-Del_list_Category/{status}")]
+        [HttpPost]
+        public ApiResponse Ins_Upd_Del_list([FromBody] List<CategoryModel> model, string status)
+        {
+            if (_CategoryBusiness.Ins_Upd_Del(model, status))
+                return new ApiResponse
+                {
+                    Success = true,
+                    Message = status + " Category successfully.",
+                    Data = model
+                };
+            return new ApiResponse
+            {
+                Success = false,
+                Message = status + " Category failed",
+                Data = model
+            };
+        }
+
+        [Route("search-category")]
+        [HttpPost]
+        public IActionResult Search([FromBody] SearchModel model)
+        {
+            try
+            {
+                long total = 0;
+                var data = _CategoryBusiness.Search(model, out total);
+
+                return Ok(
+                    new
+                    {
+                        TotalItems = total,
+                        Data = data,
+                        model = model
+                    }
+                    );
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

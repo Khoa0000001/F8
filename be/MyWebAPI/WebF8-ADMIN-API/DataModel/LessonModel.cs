@@ -15,7 +15,7 @@ namespace DataModel
         public string? Image { get; set; }
         public int Views { get; set; }
         public int Likes { get; set; }
-        public DateTime? CreateAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
         public int CourseId { get; set; }
     }
 }

@@ -1,0 +1,178 @@
+<div id="content" class="content">
+    <div class="grid">
+        <div class="title">
+            <h3>Thông tin đăng ký</h3>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            <!-- <div class="col l-4">
+                <div class="mt-4">
+                    <form name="form-participation" class="row needs-validation" method="POST">
+                        <input type="hidden" class="form-control" id="participationId" name="participationId"
+                            value="0" />
+
+                        <div class="col l-12 mt-12">
+                            <label for="name" class="form-label">Tên khóa học</label>
+                            <input type="text" class="form-control" id="courseId" name="courseId" />
+                        </div>
+
+                        <div class="col l-12 mt-12">
+                            <label for="name" class="form-label">Tên khóa học</label>
+                            <input type="text" class="form-control" id="userId" name="userId" />
+                        </div>
+
+
+                        <div class="col l-12 mt-12">
+                            <label for="status" class="form-label">Trình độ</label>
+                            <select class="form-select" id="status" name="status">
+                                <option selected disabled value="">Choose...</option>
+                                <option value="false">Chưa được xác nhận</option>
+                                <option value="true">Đã xác nhận</option>
+                            </select>
+                        </div>
+
+
+                        <div class="col l-12 mt-12">
+                            <button id="btn-participation" class="btn btn-primary" type="submit">Lưu</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div> -->
+
+            <div class="col l-12">
+                <div class="mt-4">
+                    <div class="search">
+                        <input 
+                        ng-model="search_category"
+                        ng-change="ChangeSearchCategory()"
+                        type="text" class="search-type" placeholder="Nhập mã, tên loại khóa học..." />
+                        <button class="btn btn-primary btn-search" ng-click="clickSearchCategory()">
+                            <i class="fas fas fa-search"></i> Tìm kiếm
+                        </button>
+                    </div>
+
+                    <!-- Form du lieu -->
+                    <form name="container-form" style="min-height: 350px;" action="">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col" colspan="2">#</th>
+                                    <th scope="col">Thể loại</th>
+                                    <th scope="col">Mô tả</th>
+                                    <th scope="col" colspan="2">Ngày đăng ký</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr class="category-item real" id="{{'category-item-'+x.categoryId}}" ng-repeat="x in listCategory.data">
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input"  ng-checked="x.status" type="checkbox"
+                                                value="{{x.categoryId}}" name="categoryId" />
+                                        </div>
+                                    </td>
+                                    <th scope="row">
+                                        {{ ($index
+                                        +1)+((listCategory.model.page_Index-1)*listCategory.model.page_Size)}}
+                                    </th>
+                                    <td name="nameCategory">
+                                        <section
+                                            style="white-space: nowrap;
+                                                max-width: 200px;
+                                                overflow: hidden;
+                                                text-overflow: ellipsis"
+                                            contenteditable="true" name="nameCategory" class="view" data-src="{{x.name}}">
+                                            {{x.name}}
+                                        </section>
+                                    </td>
+                                    <td name="description">
+                                        <section 
+                                        style="white-space: nowrap;
+                                                max-width: 200px;
+                                                overflow: hidden;
+                                                text-overflow: ellipsis"
+                                        contenteditable="true" name="description" class="view" data-src="{{x.description}}">
+                                            {{x.description}}
+                                        </section>
+                                    </td>
+                                    <td name="createdAt">{{x.createdAt}}</td>
+                                    <td
+                                     >
+                                        <a href="" class="btn btn-link btn-delete-category"
+                                            ng-click="clickDeleteCategory(x.categoryId)"
+                                            data-id="{{x.categoryId}}">
+                                            Xóa
+                                        </a>
+
+                                    </td>
+                                </tr>
+
+                                <tr ng-repeat="x in arryInsItemCategory" class="category-item clone">
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="hidden" value="" name="categoryId" />
+                                        </div>
+                                    </td>
+                                
+                                    <th scope="row"> </th>
+                                
+                                    <td class='editing'>
+                                        <section contenteditable="false" name="nameCategory" class="view"> </section>
+                                        <input placeholder="Nhập tên thể loại" name="nameCategory" class="edit" />
+                                    </td>
+                                
+                                    <td class='editing'>
+                                        <section contenteditable="false" name="description" class="view"> </section>
+                                        <input placeholder="Nhập mô tả thể loại" name="description" class="edit" />
+                                    </td>
+                                
+                                    <td name="createdAt">{{x.data}}</td>
+                                
+                                    <td>
+                                        <button 
+                                            ng-click="clickDeleteCategoryItem($index)"
+                                            class="btn btn-link btn-delete-category">
+                                            Hủy
+                                        </button>
+                                    </td>
+                                </tr>                               
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding: 0 12px;">
+                    <button 
+                        ng-click="clickInsertCategoryItem()"
+                        style="min-width: 0;font-size: 24px;"
+                        class="btn btn-primary btn-create-category">+</button>
+                    <button 
+                        ng-click="clickLuuListCategory()"
+                        class="btn btn-primary btn-update-category">Lưu</button>
+                </div>
+                <div class="padding-box">
+                    
+                    <div class="box-sum">
+                        <div class="box-left">
+                            Số lượng thể loại: <span id="soluong">{{listCategory.totalItems}}</span>
+                        </div>
+                        <div class="box-right">
+                            <button class="btn-primary"><i class="fas fa-angle-left"></i></button>
+                            <div class="navigation">
+                                <button ng-repeat="x in navigation_btn"
+                                    ng-click="LoadCategorys({
+                                                name: listCategory.model.name,
+                                                page_Index: x,
+                                                page_Size: listCategory.model.page_Size
+                                            })"
+                                    data-id="{{x}}" class="btn-primary">{{$index +1}}</button>
+                            </div>
+                            <button class="btn-primary"><i class="fas fa-angle-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

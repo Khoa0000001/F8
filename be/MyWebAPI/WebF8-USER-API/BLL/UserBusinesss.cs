@@ -26,5 +26,15 @@ namespace BLL
         {
             return _res.CheckUserRegisterCourse(userid, courseid);
         }
+
+        public bool UpdateUser(UserModel model)
+        {
+            return _res.UpdateUser(model);
+        }
+
+        public UserModel GetUersbyID(string id)
+        {
+            return _res.GetUersbyID(id);
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using BLL.Interfaces;
+﻿using BLL;
+using BLL.Interfaces;
 using DataModel;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -31,7 +32,8 @@ namespace WebF8API.Controllers
             return new ApiResponse
             {
                 Success = false,
-                Message = "Get By ID failed."
+                Message = "Get By ID failed.",
+                Data=false
             };
         }
 
@@ -71,12 +73,47 @@ namespace WebF8API.Controllers
                 Data = model
             };
         }
-        [Route("search-course")]
-        [HttpGet]
-        public List<CourseModel> Search(string name)
+        [Route("delete-course/{id}")]
+        [HttpDelete]
+        public ApiResponse DeleteItem(string id)
         {
-           var result = _CouerseBusiness.Search(name);
-            return result;
+            var result = _CouerseBusiness.Delete(id);
+            if (result != null)
+                return new ApiResponse
+                {
+                    Success = true,
+                    Message = "Delete successfully.",
+                    Data = result
+                };
+            return new ApiResponse
+            {
+                Success = false,
+                Message = "Delete ID failed.",
+                Data=false
+            };
+        }
+        [Route("search-course")]
+        [HttpPost]
+        public IActionResult Search([FromBody] SearchModel model)
+        {
+            try
+            {      
+                long total = 0;
+                var data = _CouerseBusiness.Search(model,out total);
+
+                return Ok(
+                    new
+                    {
+                        TotalItems = total,
+                        Data = data,
+                        model = model
+                    }
+                    );
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

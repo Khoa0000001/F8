@@ -45,7 +45,7 @@ namespace DAL
                 "@Image", model.Image,
                 "@Views", model.Views,
                 "@Likes", model.Likes,
-                "@CreateAt", model.CreateAt,
+                "@CreateAt", model.CreatedAt,
                 "@CourseId", model.CourseId);
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
@@ -72,7 +72,7 @@ namespace DAL
                 "@Image", model.Image,
                 "@Views", model.Views,
                 "@Likes", model.Likes,
-                "@CreateAt", model.CreateAt,
+                "@CreateAt", model.CreatedAt,
                 "@CourseId", model.CourseId);
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
@@ -85,16 +85,59 @@ namespace DAL
                 throw ex;
             }
         }
-
-        public List<LessonModel> Search(string name)
+        public bool Delete(string id)
         {
             string msgError = "";
             try
             {
+                var result = _db.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_lesson_delete",
+                "@LessonId", id);
+                if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
+                {
+                    throw new Exception(Convert.ToString(result) + msgError);
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public bool Ins_Upd_Del(List<LessonModel> model,string status)
+        {
+            string msgError = "";
+            try
+            {
+                var result = _db.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_lesson_UID_all",
+                "@TrangThai", status,
+                "@list_json_lessons", model != null ? MessageConvert.SerializeObject(model) : null);
+                if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
+                {
+                    throw new Exception(Convert.ToString(result) + msgError);
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public List<LessonModel> Search(SearchModel model, out long total, string id)
+        {
+            string msgError = "";
+            total = 0;
+            try
+            {
                 var dt = _db.ExecuteSProcedureReturnDataTable(out msgError, "sp_lesson_search",
-                    "@Name", name);
+                    "@Name", model.Name,
+                    "@CourseId",id,
+                    "@page_index", model.Page_Index,
+                    "@page_size", model.Page_Size);
                 if (!string.IsNullOrEmpty(msgError))
                     throw new Exception(msgError);
+                if (dt.Rows.Count > 0) total = (long)dt.Rows[0]["RecordCount"];
                 return dt.ConvertTo<LessonModel>().ToList();
             }
             catch (Exception ex)

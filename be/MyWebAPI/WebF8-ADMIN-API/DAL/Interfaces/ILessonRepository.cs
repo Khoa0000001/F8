@@ -12,6 +12,8 @@ namespace DAL.Interfaces
         LessonModel GetDatabyID(string id);
         bool Create(LessonModel model);
         bool Update(LessonModel model);
-        List<LessonModel> Search(string name);
+        bool Delete(string id);
+        bool Ins_Upd_Del(List<LessonModel> model, string status);
+        List<LessonModel> Search(SearchModel model, out long total, string id);
     }
 }

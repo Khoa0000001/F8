@@ -11,5 +11,7 @@ namespace DAL.Interfaces
     {
         UserModel GetAllCourseParticipationsByID(string id);
         CourseParticipationModel CheckUserRegisterCourse(string userid, string courseid);
+        bool UpdateUser(UserModel model);
+        UserModel GetUersbyID(string id);
     }
 }

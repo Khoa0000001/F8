@@ -1,0 +1,391 @@
+<div id="content" class="content">
+    <div class="grid">
+        <div class="title">
+            <h3>Thông tin khóa học</h3>
+        </div>
+        <div class="row">
+            <div class="col l-4">
+                <div class="mt-4">
+                    <!-- Form nhap thong tin khoa hoc -->
+                    <form
+                        name="form-course"
+                        class="row needs-validation"
+                        method="POST"
+                    >
+                        <input
+                            type="hidden"
+                            class="form-control"
+                            id="courseId"
+                            name="courseId"
+                            value="0"
+                        />
+                        <input type="hidden" class="form-control" id="CreateAtCourse" name="courseId" value="0" />
+
+                        <div class="col l-12 mt-12">
+                            <label for="name" class="form-label"
+                                >Tên khóa học</label
+                            >
+                            <input
+                                type="text"
+                                ng-model="nameCourse"
+                                class="form-control"
+                                id="nameCourse"
+                                name="nameCourse"
+                            />
+                        </div>
+
+                        <div class="col l-12 mt-12">
+                            <label for="description" class="form-label"
+                                >Mô tả</label
+                            >
+                            <textarea
+                                type="text"
+                                ng-model="DescriptionCourse"
+                                class="form-control"
+                                id="description"
+                                name="description"
+                                style="resize: vertical"
+                            ></textarea>
+                        </div>
+
+                        <div class="col l-12 mt-12">
+                            <label for="image" class="form-label">Ảnh</label>
+                            <img
+                                src="{{ImgCourse}}"
+                                class="form-control"
+                                id="img-DkCourse"
+                                alt=""
+                                onclick="document.getElementById('getFile').click()"
+                            />
+                            <input
+                                type="file"
+                                class="form-control"
+                                id="getFile"
+                                name="image"
+                                style="display: none"
+                            />
+                        </div>
+
+                        <div class="col l-12 mt-12">
+                            <label for="price" class="form-label">Giá</label>
+                            <input
+                                type="text"
+                                ng-model="PriceCourse"
+                                class="form-control"
+                                id="price"
+                                name="price"
+                            />
+                        </div>
+
+                        <input
+                            type="hidden"
+                            class="form-control"
+                            id="slug"
+                            name="slug"
+                        />
+
+                        <div class="col l-12 mt-12">
+                            <label for="level" class="form-label"
+                                >Thể loại</label
+                            >
+                            <select
+                                class="form-select"
+                                id="categoryId"
+                                name="categoryId"
+                            >
+                                <option selected disabled value="0">
+                                    Choose...
+                                </option>
+                                <option
+                                    ng-repeat="x in listCategorys"
+                                    value="{{x.categoryId}}"
+                                >
+                                    {{x.name}}
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="col l-12 mt-12">
+                            <button
+                                id="btn-luu-course"
+                                class="btn btn-primary"
+                                ng-click="submitCourse()"
+                                ng-show="isShowBtnCourse"
+                                type="submit"
+                            >
+                                Lưu
+                            </button>
+                            <div  ng-show="!isShowBtnCourse" style="display: flex; justify-content: space-between;">
+                                <button id="btn-update-course" class="btn btn-primary" ng-click="clickUpdateCourse()" type="submit">
+                                    Update
+                                </button>
+                                <button id="btn-huy-course" class="btn btn-primary" ng-click="clickHuyUpdateCourse()">
+                                    Hủy
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col l-8">
+                <div class="mt-4">
+                    <div class="search">
+                        <input
+                            type="text"
+                            class="search-type input-course"
+                            placeholder="Nhập mã, tên loại khóa học..."
+                            ng-model="search_course"
+                            ng-change="ChangeSearchCourse()"
+                        />
+                        <button
+                            class="btn btn-primary btn-search search-course"
+                            ng-click="clickSearchCourse()"
+                        >
+                            <i class="fas fas fa-search"></i> Tìm kiếm
+                        </button>
+                    </div>
+
+                    <!-- Form du lieu -->
+                    <form name="container-form" action="" style="min-height: 280px;">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col" colspan="2">#</th>
+                                    <th scope="col">Tên khóa học</th>
+                                    <th scope="col">Giá</th>
+                                    <th scope="col" colspan="2">
+                                        Thời gian tạo
+                                    </th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr
+                                    ng-repeat="x in listCourse.data"
+                                    class="course-item"
+                                >
+                                    <td>
+                                        <div class="form-check">
+                                            <input
+                                                class="form-check-input"
+                                                type="checkbox"
+                                                value="{{x.courseId}}"
+                                                name="courseIds[]"
+                                            />
+                                        </div>
+                                    </td>
+                                    <th scope="row">
+                                        {{ ($index
+                                        +1)+((listCourse.model.page_Index-1)*listCourse.model.page_Size)}}
+                                    </th>
+                                    <td class="name" ng-click="clickShowCourse(x.courseId);">{{x.name}}</td>
+                                    <td>{{x.price}}</td>
+                                    <td>{{x.createdAt}}</td>
+                                    <td>
+                                        <a
+                                            href=""
+                                            class="btn btn-link btn-delete-course"
+                                            data-id="{{x.courseId}}"
+                                            ng-click="clickDeleteCourse(x.courseId)"
+                                        >
+                                            Xóa
+                                        </a>
+                                        <a
+                                            href=""
+                                            class="btn btn-link btn-detail-course"
+                                            data-id="{{x.courseId}}"
+                                            ng-click="clickChiTiet(x.courseId)"
+                                        >
+                                            Chi tiết
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+
+                <div class="padding-box">
+                    <div class="box-sum">
+                        <div class="box-left">
+                            Số lượng khoá học:
+                            <span id="soluong">{{listCourse.totalItems}}</span>
+                        </div>
+                        <div class="box-right">
+                            <button class="btn-primary">
+                                <i class="fas fa-angle-left"></i>
+                            </button>
+                            <div class="navigation">
+                                <button
+                                    ng-repeat="x in navigation_btn"
+                                    ng-click="LoadCourses({
+                                                name: listCourse.model.name,
+                                                page_Index: x,
+                                                page_Size: listCourse.model.page_Size
+                                            })"
+                                    data-id="{{x}}"
+                                    class="btn-primary">
+                                    {{x}}</button>
+                            </div>
+                            <button class="btn-primary">
+                                <i class="fas fa-angle-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div ng-show="isShowListLesson" class="overlay"></div>
+            <!-- List Lesson -->
+            <div ng-show="isShowListLesson" class="lesson_wrapper">
+                <input type="hidden" class="form-control" id="lesson-courseId" name="courseId" value="0" />
+                <h1 class="lesson_heading">Danh sách bài học</h1>
+                <div ng-click="ShowListLesson()" class="btn btn-primary btn-exit-form">X</div>
+
+                <div class="search">
+                    <input
+                        type="text"
+                        class="search-type input-lesson"
+                        placeholder="Nhập mã, tên bài học..."
+                        ng-model="search_lesson"
+                        ng-change="ChangeSearchLesson()"
+                    />
+                    <button class="btn btn-primary btn-search search-lesson" ng-click="clickSearchLesson()">
+                        <i class="fas fas fa-search"></i> Tìm kiếm
+                    </button>
+                </div>
+
+                <!-- Bảng bài học -->
+                <div class="lesson_list">
+                    <table class="table" style="min-height: 280px;">
+                        <thead>
+                            <tr>
+                                <th scope="col" colspan="2">#</th>
+                                <th scope="col">Tên bài học</th>
+                                <th scope="col">Mô tả</th>
+                                <th scope="col">Video ID</th>
+                                <th scope="col" colspan="2">Thời gian tạo</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr ng-repeat="x in listLessons" class="lesson-item real" data-update="false">
+                                <td>
+                                    <div class="form-check">
+                                        <input
+                                            class="form-check-input"
+                                            type="checkbox"
+                                            value="{{x.lessonId}}"
+                                            name="lessonId"
+                                        />
+                                    </div>
+                                </td>
+
+                                <th scope="row">
+                                    {{ $index+1}}
+                                </th>
+
+                                <td name="nameLesson">
+                                    <section
+                                        style="white-space: nowrap;
+                                                max-width: 200px;
+                                                overflow: hidden;
+                                                text-overflow: ellipsis"
+                                        contenteditable="false"
+                                        name="nameLesson"
+                                        class="view"
+                                        data-src="{{x.name}}"
+                                    >
+                                        {{x.name}}
+                                    </section>
+                                </td>
+
+                                <td name="description">
+                                    <section
+                                        style="white-space: nowrap;
+                                                max-width: 200px;
+                                                overflow: hidden;
+                                                text-overflow: ellipsis"
+                                        contenteditable="false"
+                                        name="description"
+                                        class="view"
+                                        data-src="{{x.description}}"
+                                    >{{x.description}}</section>
+                                </td>
+
+                                <td name="videoId"> 
+                                    <section
+                                        style="white-space: nowrap;
+                                                max-width: 200px;
+                                                overflow: hidden;
+                                                text-overflow: ellipsis"
+                                        contenteditable="false"
+                                        name="videoId"
+                                        class="view"
+                                        data-src="{{x.videoId}}"
+                                    >{{x.videoId}}</section>
+                                </td>
+
+                                <td name="createdAt" data-src="{{x.createdAt}}">{{x.createdAt}}</td>
+
+                                <td>
+                                    <button
+                                        href=""
+                                        class="btn btn-link btn-delete-lesson"
+                                        data-id="{{x.lessonId}}"
+                                        ng-click="clickDeleteLesson(x.lessonId)"
+                                    >
+                                        Xóa
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr ng-repeat="x in arryInsItemLesson" class="lesson-item clone">
+                                <td>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="hidden" value="" name="lessonId" />
+                                    </div>
+                                </td>
+                            
+                                <th scope="row"> </th>
+                            
+                                <td class='editing'>
+                                    <section contenteditable="false" name="nameLesson" class="view"> </section>
+                                    <input placeholder="Nhập tên bài học" name="nameLesson" class="edit" />
+                                </td>
+                            
+                                <td class='editing'>
+                                    <section contenteditable="false" name="description" class="view"> </section>
+                                    <input placeholder="Nhập mô tả bài học" name="description" class="edit" />
+                                </td>
+                            
+                                <td class='editing'>
+                                    <section contenteditable="false" name="nameLesson" class="view"> </section>
+                                    <input placeholder="Nhập video ID" name="videoId" class="edit" />
+                                </td>
+                            
+                                <td name="createdAt">{{x.data}}</td>
+                            
+                                <td>
+                                    <button class="btn btn-link btn-delete-lesson" ng-click="clickDeleteLessonItem($index)" data-id=''>
+                                        Hủy
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <button class="btn btn-primary btn-create-lesson"
+                        ng-click="clickInsertLessonItem()"
+                >+</button>
+                <button class="btn btn-primary btn-update-lesson" ng-click="clickLuuListLesson()">Lưu</button>
+                <button class="btn btn-primary btn-delete-all-lesson" 
+                        style="margin-left: 70%;"
+                        ng-show="isShowBtnDelAllLesson"
+                        ng-click="clickDeleteAllLessons()"
+                >Xóa tất cả</button>
+            </div>
+        </div>
+    </div>
+</div>

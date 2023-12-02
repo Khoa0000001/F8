@@ -10,8 +10,10 @@ namespace BLL.Interfaces
     public interface ICategoryBusiness
     {
         CategoryModel GetDatabyID(string id);
-        public bool Create(CategoryModel model);
-        public bool Update(CategoryModel model);
-        public List<CategoryModel> Search(string name);
+        bool Create(CategoryModel model);
+        bool Update(CategoryModel model);
+        bool Delete(string id);
+        bool Ins_Upd_Del(List<CategoryModel> model, string status);
+        List<CategoryModel> Search(SearchModel model, out long total);
     }
 }

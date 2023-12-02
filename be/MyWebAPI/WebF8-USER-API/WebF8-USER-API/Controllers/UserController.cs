@@ -60,18 +60,57 @@ namespace WebF8_USER_API.Controllers
         [HttpPost]
         public ApiResponse CreateItem([FromBody] CourseParticipationModel model)
         {
-            if (_CPserBusiness.CreateCourseParticipation(model))
+            var result = _CPserBusiness.CreateCourseParticipation(model);
+            if (result != null)
                 return new ApiResponse
                 {
                     Success = true,
                     Message = "Create CourseParticipation successfully.",
-                    Data = model
+                    Data = result
                 };
             return new ApiResponse
             {
                 Success = false,
                 Message = "Create CourseParticipation failed",
-                Data = model
+                Data = result
+            };
+        }
+        [Route("update-user")]
+        [HttpPost]
+        public ApiResponse UpdateUser([FromBody] UserModel model)
+        {
+            var result = _UserBusiness.UpdateUser(model);
+            if (result != null)
+                return new ApiResponse
+                {
+                    Success = true,
+                    Message = "Update User successfully.",
+                    Data = result
+                };
+            return new ApiResponse
+            {
+                Success = false,
+                Message = "Update User failed",
+                Data = result
+            };
+        }
+        [Route("get-user-id/{id}")]
+        [HttpGet]
+        public ApiResponse GetUserbyID(string id)
+        {
+            var result = _UserBusiness.GetUersbyID (id);
+            if (result != null)
+                return new ApiResponse
+                {
+                    Success = true,
+                    Message = "get User successfully.",
+                    Data = result
+                };
+            return new ApiResponse
+            {
+                Success = false,
+                Message = "get User failed",
+                Data = result
             };
         }
     }
